@@ -1,0 +1,13 @@
+{
+  "name": "web3-todo-list",
+  "version": "1.0.0",
+  "description": "On-chain task manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test"
+  },
+  "dependencies": {
+    "hardhat": "^2.19.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  }
+}
