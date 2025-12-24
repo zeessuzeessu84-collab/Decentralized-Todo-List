@@ -1,4 +1,4 @@
-grequire("@nomicfoundation/hardhat-toolbox");
+ffggrequire("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
