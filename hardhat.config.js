@@ -5,7 +5,7 @@ module.exports = {
   solidity: "0.8.20",
   networks: {
     hardhat: {}, // Local testing ke liye
-  }
+  }hh
 }
 vh
 bbb
