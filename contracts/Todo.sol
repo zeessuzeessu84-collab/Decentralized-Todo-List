@@ -35,4 +35,18 @@ contract TodoList {
     function getMyTasks() public view returns (Task[] memory) {
         return userTasks[msg.sender];
     }
+
+// Task delete karne ke liye
+function deleteTask(uint256 _index) public {
+    require(_index < userTasks[msg.sender].length, "Task does not exist");
+    
+    // Last element ko current index par move karna (efficient deletion)
+    if (_index != userTasks[msg.sender].length - 1) {
+        userTasks[msg.sender][_index] = userTasks[msg.sender][userTasks[msg.sender].length - 1];
+    }
+    
+    userTasks[msg.sender].pop();
+    
+    emit TaskDeleted(msg.sender, _index);
+}
 }
