@@ -24,12 +24,12 @@ contract TodoList {
     }
 
     // Task status update karne ke liye
-    function toggleCompleted(uint256 _index) public {
-        require(_index < userTasks[msg.sender].length, "Task does not exist");
-        Task storage task = userTasks[msg.sender][_index];
-        task.completed = !task.completed;
-        emit TaskCompleted(msg.sender, _index);
-    }
+ function toggleCompleted(uint256 _index) public {
+    require(_index < userTasks[msg.sender].length, "Task does not exist");
+    Task storage task = userTasks[msg.sender][_index];
+    task.completed = !task.completed;
+    emit TaskCompleted(msg.sender, task.id); // ← Emit the actual ID, not the index
+}
 
     // User ke saare tasks dekhne ke liye
     function getMyTasks() public view returns (Task[] memory) {
